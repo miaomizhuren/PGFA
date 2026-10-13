@@ -1,0 +1,4 @@
+base_config: ../clean_stage_sensitivity_pbu_force/pbu_force_clean3000_attack3001_3200_observe3201_3700.yaml
+experiment: {name: pbu_defense_nc_clean3000_attack3001_3200_observe3201_3700, output_dir: outputs/pbu_defense_clean3000_force/nc_clean3000_attack3001_3200_observe3201_3700, log_path: experiments/logs/pbu_defense_clean3000_force/pbu_defense_nc_clean3000_attack3001_3200_observe3201_3700.log}
+tracking: {database_name: metrics_pbu_defense_nc_clean3000_attack3001_3200_observe3201_3700.db}
+defense: {enabled: true, name: norm_clipping, start_round: 3001, end_round: 3700, scope: server_aggregation, params: {clip_norm: 5.0}}

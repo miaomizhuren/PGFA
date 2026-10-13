@@ -1,0 +1,23 @@
+{
+  "experiment": "norm_clipping",
+  "method": "Norm Clipping",
+  "dataset": "CIFAR-10",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/pbu_defense_clean3000_force/nc_clean3000_attack3001_3200_observe3201_3700/metrics_pbu_defense_nc_clean3000_attack3001_3200_observe3201_3700.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 87.77428888888889,
+    "ASR@+500": 67.87777777777778,
+    "ASR@attack_end": 100.0,
+    "N80": 381,
+    "N90": 233,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {},
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

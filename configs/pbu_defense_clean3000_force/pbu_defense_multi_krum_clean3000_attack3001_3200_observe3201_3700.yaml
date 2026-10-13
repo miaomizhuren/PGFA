@@ -1,0 +1,4 @@
+base_config: ../clean_stage_sensitivity_pbu_force/pbu_force_clean3000_attack3001_3200_observe3201_3700.yaml
+experiment: {name: pbu_defense_multi_krum_clean3000_attack3001_3200_observe3201_3700, output_dir: outputs/pbu_defense_clean3000_force/multi_krum_clean3000_attack3001_3200_observe3201_3700, log_path: experiments/logs/pbu_defense_clean3000_force/pbu_defense_multi_krum_clean3000_attack3001_3200_observe3201_3700.log}
+tracking: {database_name: metrics_pbu_defense_multi_krum_clean3000_attack3001_3200_observe3201_3700.db}
+defense: {enabled: true, name: multi_krum, start_round: 3001, end_round: 3700, scope: server_aggregation, params: {f: 3, m: 5, strict_validity: true}}

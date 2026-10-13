@@ -1,0 +1,5 @@
+Method,PSNR,SSIM,Raw_Linf,Evidence_type,Source_file,Source_record
+CE-only UAP,32.48741912841797,0.9554125070571899,0.026160061359405518,independent_offline_trigger_audit,SOURCE_ROOT/outputs/final_trigger_stealth_audit_20260924/trigger_stealth_persistence_summary.csv,Method=ce_only_uap
+DBA,16.971595764160156,0.9324137568473816,1.0,independent_offline_trigger_audit,SOURCE_ROOT/outputs/final_trigger_stealth_audit_20260924/trigger_stealth_persistence_summary.csv,Method=dba
+PGFA,32.477264404296875,0.9551283121109009,0.026160061359405518,independent_offline_trigger_audit,SOURCE_ROOT/outputs/final_trigger_stealth_audit_20260924/trigger_stealth_persistence_summary.csv,Method=pgfa
+A3FL,27.854146239791184,0.9125232696533203,0.04708808660507202,formal_R3200_saved_roundwise_metric,results/a3fl_formal/08_relaxed_strong_all_700_rounds.csv,Method=A3FL-v2-Relaxed-Strong; Round=3200

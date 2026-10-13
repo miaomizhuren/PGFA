@@ -1,0 +1,23 @@
+{
+  "experiment": "rlr",
+  "method": "RLR",
+  "dataset": "CIFAR-10",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/pbu_defense_clean3000_force/rlr_clean3000_attack3001_3200_observe3201_3700/metrics_pbu_defense_rlr_clean3000_attack3001_3200_observe3201_3700.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 73.66953333333333,
+    "ASR@+500": 60.855555555555554,
+    "ASR@attack_end": 100.0,
+    "N80": 195,
+    "N90": 107,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {},
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

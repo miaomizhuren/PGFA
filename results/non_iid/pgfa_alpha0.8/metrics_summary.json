@@ -1,0 +1,23 @@
+{
+  "experiment": "pgfa_alpha0.8",
+  "method": "PGFA",
+  "dataset": "CIFAR-10",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/cifar10_noniid_pbu_force_fromscratch_3_rerun1/alpha0.8_pbu_fromscratch_clean3000_attack3001_3200_observe3201_3700/metrics_cifar10_noniid_alpha0.8_pbu_fromscratch_clean3000_attack3001_3200_observe3201_3700_rerun1.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 56.93366666666667,
+    "ASR@+500": 28.18888888888889,
+    "ASR@attack_end": 99.96666666666667,
+    "N80": 85,
+    "N90": 41,
+    "rounds": 3700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {},
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

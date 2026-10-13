@@ -1,0 +1,28 @@
+{
+  "experiment": "dba",
+  "method": "DBA",
+  "dataset": "CIFAR-10",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/main_experiment_clean3000_force/dba_clean3000_attack3001_3200_observe3201_3700/metrics_dba_clean3000_attack3001_3200_observe3201_3700.db",
+    "outputs/parallel_13_resume_unfinished/resume_dba_from3500_to3700/metrics_resume_dba_from3500_to3700.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 58.8446,
+    "ASR@+500": 4.677777777777778,
+    "ASR@attack_end": 99.45555555555555,
+    "N80": 197,
+    "N90": 149,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {
+    "PA-AUC": 58.84,
+    "ASR@+500": 4.68,
+    "N80": 197
+  },
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

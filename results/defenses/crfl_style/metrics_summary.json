@@ -1,0 +1,23 @@
+{
+  "experiment": "crfl_style",
+  "method": "CRFL-style",
+  "dataset": "CIFAR-10",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/pbu_defense_clean3000_force/crfl_clean3000_attack3001_3200_observe3201_3700/metrics_pbu_defense_crfl_clean3000_attack3001_3200_observe3201_3700.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 71.85606666666666,
+    "ASR@+500": 49.855555555555554,
+    "ASR@attack_end": 99.9888888888889,
+    "N80": 151,
+    "N90": 93,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {},
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

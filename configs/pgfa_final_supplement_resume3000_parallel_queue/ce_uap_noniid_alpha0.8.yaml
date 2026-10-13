@@ -1,0 +1,118 @@
+experiment:
+  name: ce_uap_noniid_alpha0.8_final_supplement_resume3000
+  seed: 2026
+  output_dir: outputs/pgfa_final_supplement_resume3000/noniid_ce_uap/ce_uap_noniid_alpha0.8_final_supplement
+  log_path: experiments/logs/pgfa_final_supplement_resume3000/noniid_ce_uap/ce_uap_noniid_alpha0.8_final_supplement.log
+dataset:
+  name: cifar10
+  root: ./datasets
+  num_classes: 10
+  download: false
+partition:
+  type: dirichlet
+  num_clients: 100
+  alpha: 0.8
+  min_samples_per_client: 1
+  max_retries: 100
+  summary_dir: outputs/pgfa_final_supplement_resume3000/noniid_ce_uap/ce_uap_noniid_alpha0.8_final_supplement/partition_summary
+model:
+  name: resnet18
+federated:
+  num_rounds: 3700
+  total_rounds: 3700
+  clients_per_round: 10
+  local_epochs: 3
+  malicious_local_epochs: 3
+training:
+  batch_size: 64
+  learning_rate: 0.01
+  momentum: 0.9
+  weight_decay: 0.0005
+  num_workers: 0
+device:
+  type: auto
+tracking:
+  enabled: true
+  database_name: metrics_ce_uap_noniid_alpha0.8_final_supplement_resume3000.db
+  record_client_metrics: true
+resume:
+  enabled: true
+  checkpoint_path: outputs/cifar10_noniid_pbu_force_fromscratch_3_rerun1/alpha0.8_pbu_fromscratch_clean3000_attack3001_3200_observe3201_3700/checkpoints/global_round_3000.pt
+  resume_round: 3000
+  replay_client_sampling: true
+  replay_client_sampling_start_round: 1
+checkpoint:
+  enabled: true
+  save_rounds:
+  - 3000
+  - 3200
+  - 3300
+  - 3400
+  - 3500
+  - 3600
+  - 3700
+  save_global_model: true
+  save_adversarial_delta: true
+defense:
+  enabled: false
+  name: none
+visualization:
+  enabled: false
+attack:
+  enabled: true
+  method: ce_uap
+  target_label: 0
+  malicious_client_ids:
+  - 0
+  - 1
+  - 2
+  num_malicious_clients: 3
+  selection_policy: force_during_attack
+  min_malicious_per_attack_round: 3
+  prototype_build_policy: legacy_local
+  poison_ratio: 0.6
+  start_round: 3001
+  end_round: 3200
+  trigger:
+    type: adversarial
+    adversarial:
+      epsilon: 0.1
+      steps: 100
+      alpha: 0.005
+      prototype_contrastive:
+        enabled: false
+        use_in_delta_generation: false
+        use_in_malicious_training: false
+        lambda_delta: 12.0
+        lambda_train: 7.0
+        temperature: 0.01
+        center_batches: 30
+        mode: target_vs_source
+        source_margin: 0.7
+        feature_layer: layer4
+        min_samples_per_class: 1
+        missing_class_strategy: skip
+        exclude_target_in_uap: true
+        prototype_source: single_malicious
+        aggregate_prototypes: false
+        freeze_after_build: true
+        refresh_policy: fixed
+        refresh_interval: 5
+        refresh_during: attack_only
+evaluation:
+  post_attack_start: 3201
+  pa_auc_start: 3201
+  pa_auc_end: 3700
+  eval_rounds:
+  - 3000
+  - 3001
+  - 3100
+  - 3200
+  - 3201
+  - 3300
+  - 3400
+  - 3500
+  - 3600
+  - 3700
+mechanism_analysis:
+  enabled: false

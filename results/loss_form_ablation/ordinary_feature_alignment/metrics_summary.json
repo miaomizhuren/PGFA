@@ -1,0 +1,27 @@
+{
+  "experiment": "ordinary_feature_alignment",
+  "method": "Ordinary Feature Alignment",
+  "dataset": "CIFAR-10",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/pgfa_feature_loss_ablation_seed2026/feature_alignment_seed2026/metrics_pgfa_feature_alignment_seed2026.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 82.82771111111111,
+    "ASR@+500": 70.12222222222222,
+    "ASR@attack_end": 99.94444444444444,
+    "N80": 291,
+    "N90": 150,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {
+    "PA-AUC": 82.83,
+    "ASR@+500": 70.12,
+    "N80": 291
+  },
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

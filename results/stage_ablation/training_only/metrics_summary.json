@@ -1,0 +1,23 @@
+{
+  "experiment": "training_only",
+  "method": "Prototype training only",
+  "dataset": "CIFAR-10",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/pbu_ablation_clean3000_force/proto_train_only_clean3000_attack3001_3200_observe3201_3700/metrics_ablation_proto_train_only_clean3000_attack3001_3200_observe3201_3700.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 85.13846666666666,
+    "ASR@+500": 61.75555555555555,
+    "ASR@attack_end": 99.97777777777777,
+    "N80": 329,
+    "N90": 195,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {},
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

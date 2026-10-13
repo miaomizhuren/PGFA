@@ -1,0 +1,2 @@
+experiment,exit_code,round_count,unique_rounds,range,complete,resume_checkpoint,start_round,attack_3001_3200,post_off,traceback,device_mismatch,alignment_loss_evidence,fallback
+PGFA Feature Alignment retry1 seed20261,0,700,700,3001-3700,True,SOURCE_ROOT/outputs/seed_stability_pbu_force_fromscratch_5_rerun1/pbu_seed20261_fromscratch_clean3000_attack3001_3200_observe3201_3700/checkpoints/global_round_3000.pt,3001,True,True,False,False,True,False

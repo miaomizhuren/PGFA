@@ -1,0 +1,28 @@
+{
+  "experiment": "a3fl_relaxed_strong",
+  "method": "A3FL",
+  "dataset": "CIFAR-10",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/a3fl_v2_relaxed_strong_seed2026/metrics_a3fl_v2_relaxed_strong_seed2026_resume3000.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 80.04282222222223,
+    "ASR@+500": 65.24444444444444,
+    "ASR@attack_end": 99.84444444444445,
+    "N80": 240,
+    "N90": 136,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {
+    "PA-AUC": 80.04,
+    "ASR@+500": 65.24,
+    "N80": 240,
+    "N90": 136
+  },
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

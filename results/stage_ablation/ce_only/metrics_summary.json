@@ -1,0 +1,23 @@
+{
+  "experiment": "ce_only",
+  "method": "CE-only UAP",
+  "dataset": "CIFAR-10",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/pbu_ablation_clean3000_force/ce_only_uap_clean3000_attack3001_3200_observe3201_3700/metrics_ablation_ce_only_uap_clean3000_attack3001_3200_observe3201_3700.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 73.19293333333333,
+    "ASR@+500": 56.34444444444444,
+    "ASR@attack_end": 99.87777777777778,
+    "N80": 143,
+    "N90": 61,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {},
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

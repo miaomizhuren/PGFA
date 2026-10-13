@@ -1,0 +1,6 @@
+method,round,psnr,ssim,raw_linf,record_type,roundwise_source,notes
+CE-only UAP,3200,32.44710129355795,0.9656150937080383,0.026160061359405518,online_roundwise_metric_snapshot,main/ce_only_uap/roundwise_metrics.csv,Saved R3200 online metric; not substituted for the independent offline trigger audit.
+DBA,3200,15.245770900209966,0.930355429649353,1.0,online_roundwise_metric_snapshot,main/dba/roundwise_metrics.csv,Saved R3200 online metric; not substituted for the independent offline trigger audit.
+Neurotoxin-UAP,3200,32.44710129355795,0.9656150937080383,0.026160061359405518,online_roundwise_metric_snapshot,main/neurotoxin/roundwise_metrics.csv,Saved R3200 online metric; not substituted for the independent offline trigger audit.
+A3FL,3200,27.854146239791184,0.9125232696533203,0.04708808660507202,online_roundwise_metric_snapshot,main/a3fl_relaxed_strong/roundwise_metrics.csv,Saved R3200 online metric; not substituted for the independent offline trigger audit.
+PGFA,3200,32.435744249420615,0.965277373790741,0.026160061359405518,online_roundwise_metric_snapshot,main/pgfa/roundwise_metrics.csv,Saved R3200 online metric; not substituted for the independent offline trigger audit.

@@ -1,0 +1,14 @@
+# Full-method protocol with prototype loss only in malicious local training.
+base_config: ../clean_stage_sensitivity_pbu_force/pbu_force_clean3000_attack3001_3200_observe3201_3700.yaml
+experiment: {name: ablation_proto_train_only_clean3000_attack3001_3200_observe3201_3700, output_dir: outputs/pbu_ablation_clean3000_force/proto_train_only_clean3000_attack3001_3200_observe3201_3700, log_path: experiments/logs/pbu_ablation_clean3000_force/ablation_proto_train_only_clean3000_attack3001_3200_observe3201_3700.log}
+tracking: {database_name: metrics_ablation_proto_train_only_clean3000_attack3001_3200_observe3201_3700.db}
+checkpoint: {delta_save_rounds: [3001, 3100, 3200]}
+attack:
+  method: proto_uap
+  trigger:
+    adversarial:
+      prototype_contrastive:
+        enabled: true
+        use_in_delta_generation: false
+        use_in_malicious_training: true
+        lambda_delta: 0.0

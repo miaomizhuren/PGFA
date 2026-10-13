@@ -1,0 +1,6 @@
+paper_role,manifest_experiment,method,result_source,status
+Stage ablation: Full PGFA,pgfa,PGFA,results/main/pgfa/roundwise_metrics.csv,VERIFIED
+Loss-form ablation: CE-only,ce_only_uap,CE-only UAP,results/main/ce_only_uap/roundwise_metrics.csv,VERIFIED
+Loss-form ablation: Full PGFA,pgfa,PGFA,results/main/pgfa/roundwise_metrics.csv,VERIFIED
+Defense: No Defense,pgfa,PGFA,results/main/pgfa/roundwise_metrics.csv,VERIFIED
+Attack duration: 200 rounds,pgfa,PGFA,results/main/pgfa/roundwise_metrics.csv,VERIFIED

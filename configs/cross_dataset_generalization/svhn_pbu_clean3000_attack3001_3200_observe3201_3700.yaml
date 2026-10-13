@@ -1,0 +1,19 @@
+base_config: ../clean_stage_sensitivity_pbu_force/pbu_force_clean3000_attack3001_3200_observe3201_3700.yaml
+experiment:
+  name: svhn_pbu_clean3000_attack3001_3200_observe3201_3700
+  output_dir: outputs/cross_dataset_generalization/svhn_pbu_clean3000_attack3001_3200_observe3201_3700
+  log_path: experiments/logs/cross_dataset_generalization/svhn_pbu_clean3000_attack3001_3200_observe3201_3700.log
+tracking: {database_name: metrics_svhn_pbu_clean3000_attack3001_3200_observe3201_3700.db}
+dataset: {name: svhn, root: ./datasets, num_classes: 10, download: false}
+resume: {enabled: true, checkpoint_path: outputs/cifar100_svhn_clean3000/a2_svhn_clean_0_3000/checkpoints/global_round_3000.pt, resume_round: 3000}
+attack:
+  prototype_build_policy: legacy_local
+  trigger:
+    adversarial:
+      prototype_contrastive:
+        center_batches: -1
+        min_samples_per_class: 1
+        prototype_source: single_malicious
+        aggregate_prototypes: false
+        refresh_policy: fixed
+metadata: {study: cross_dataset_generalization, method_label: PBU, prototype_estimation: single_malicious_clean_local_min1_full_local_loader}

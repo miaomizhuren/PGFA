@@ -1,0 +1,9 @@
+base_config: ../main_experiment_clean3000_force/ce_uap_clean3000_attack3001_3200_observe3201_3700.yaml
+experiment:
+  name: svhn_ce_uap_clean3000_attack3001_3200_observe3201_3700
+  output_dir: outputs/cross_dataset_generalization/svhn_ce_uap_clean3000_attack3001_3200_observe3201_3700
+  log_path: experiments/logs/cross_dataset_generalization/svhn_ce_uap_clean3000_attack3001_3200_observe3201_3700.log
+tracking: {database_name: metrics_svhn_ce_uap_clean3000_attack3001_3200_observe3201_3700.db}
+dataset: {name: svhn, root: ./datasets, num_classes: 10, download: false}
+resume: {enabled: true, checkpoint_path: outputs/cifar100_svhn_clean3000/a2_svhn_clean_0_3000/checkpoints/global_round_3000.pt, resume_round: 3000}
+metadata: {study: cross_dataset_generalization, method_label: CE-UAP, prototype_estimation: not_applicable}

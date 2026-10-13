@@ -1,0 +1,2 @@
+alpha,num_clients,min_client_samples,max_client_samples,mean_client_samples,std_client_samples,mean_dominant_ratio,max_dominant_ratio,clients_missing_any_class_count,notes
+0.8,100,159,1314,500.0,195.14010351539739,0.32745850750889544,0.7385321100917431,23,Dirichlet label-skew; seed=2026; min_samples_per_client=1; max_retries=100

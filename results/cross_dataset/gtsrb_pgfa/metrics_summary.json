@@ -1,0 +1,25 @@
+{
+  "experiment": "gtsrb_pgfa",
+  "method": "PGFA",
+  "dataset": "GTSRB",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/cross_dataset_generalization_retry/gtsrb_pbu_clean3000_attack3001_3200_observe3201_3700_retry1/metrics_gtsrb_pbu_clean3000_attack3001_3200_observe3201_3700_retry1.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 81.9321877486078,
+    "ASR@+500": 66.69848846459826,
+    "ASR@attack_end": 99.88862370723946,
+    "N80": 250,
+    "N90": 120,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {
+    "PA-AUC": 81.93
+  },
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

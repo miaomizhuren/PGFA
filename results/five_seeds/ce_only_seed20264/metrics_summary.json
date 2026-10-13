@@ -1,0 +1,23 @@
+{
+  "experiment": "ce_only_seed20264",
+  "method": "CE-only UAP",
+  "dataset": "CIFAR-10",
+  "seed": 20264,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/pgfa_final_supplement_resume3000/ce_uap_multiseed/ce_uap_seed20264_final_supplement/metrics_ce_uap_seed20264_final_supplement_resume3000.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 69.7503111111111,
+    "ASR@+500": 45.044444444444444,
+    "ASR@attack_end": 99.56666666666666,
+    "N80": 134,
+    "N90": 68,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {},
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

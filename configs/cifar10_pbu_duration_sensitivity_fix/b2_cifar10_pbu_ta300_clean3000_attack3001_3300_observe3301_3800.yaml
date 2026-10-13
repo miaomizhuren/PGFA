@@ -1,0 +1,12 @@
+base_config: ../clean_stage_sensitivity_pbu_force/pbu_force_clean3000_attack3001_3200_observe3201_3700.yaml
+experiment:
+  name: b2_cifar10_pbu_ta300_clean3000_attack3001_3300_observe3301_3800
+  output_dir: outputs/cifar10_pbu_duration_sensitivity_fix/b2_cifar10_pbu_ta300_clean3000_attack3001_3300_observe3301_3800
+  log_path: experiments/logs/cifar10_pbu_duration_sensitivity_fix/b2_cifar10_pbu_ta300_clean3000_attack3001_3300_observe3301_3800.log
+federated: {num_rounds: 3800, total_rounds: 3800}
+tracking: {database_name: metrics_b2_cifar10_pbu_ta300_clean3000_attack3001_3300_observe3301_3800.db}
+checkpoint:
+  save_rounds: [3300, 3400, 3500, 3600, 3700, 3800]
+  delta_save_rounds: [3001, 3100, 3200, 3300]
+attack: {end_round: 3300}
+evaluation: {post_attack_start: 3301, pa_auc_start: 3301, pa_auc_end: 3800, eval_rounds: [3001, 3100, 3200, 3300, 3301, 3400, 3500, 3600, 3700, 3800]}

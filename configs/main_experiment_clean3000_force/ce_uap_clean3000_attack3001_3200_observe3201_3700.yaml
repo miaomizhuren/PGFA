@@ -1,0 +1,26 @@
+experiment: {name: ce_uap_clean3000_attack3001_3200_observe3201_3700, seed: 2026, output_dir: outputs/main_experiment_clean3000_force/ce_uap_clean3000_attack3001_3200_observe3201_3700, log_path: experiments/logs/main_experiment_clean3000_force/ce_uap_clean3000_attack3001_3200_observe3201_3700.log}
+dataset: {name: cifar10, root: ./datasets, num_classes: 10, download: false}
+partition: {type: iid, num_clients: 100}
+model: {name: resnet18}
+federated: {num_rounds: 3700, total_rounds: 3700, clients_per_round: 10, local_epochs: 3, malicious_local_epochs: 3}
+training: {batch_size: 64, learning_rate: 0.010, momentum: 0.9, weight_decay: 0.0005, num_workers: 0}
+device: {type: auto}
+tracking: {enabled: true, database_name: metrics_ce_uap_clean3000_attack3001_3200_observe3201_3700.db, record_client_metrics: true}
+resume: {enabled: true, checkpoint_path: outputs/clean_resume_force_clean500_to3000_bs64_e3_save500/checkpoints/global_round_3000.pt, resume_round: 3000}
+checkpoint: {enabled: true, save_rounds: [3200, 3300, 3400, 3500, 3600, 3700], save_global_model: true, save_adversarial_delta: true}
+defense: {enabled: false, name: none}
+visualization: {enabled: false}
+attack:
+  enabled: true
+  method: ce_uap
+  target_label: 0
+  malicious_client_ids: [0, 1, 2]
+  num_malicious_clients: 3
+  selection_policy: force_during_attack
+  min_malicious_per_attack_round: 3
+  poison_ratio: 0.60
+  start_round: 3001
+  end_round: 3200
+  trigger: {type: adversarial, adversarial: {epsilon: 0.10, steps: 100, alpha: 0.005, prototype_contrastive: {enabled: false, use_in_delta_generation: false, use_in_malicious_training: false, lambda_delta: 0.0, lambda_train: 0.0}}}
+evaluation: {post_attack_start: 3201, pa_auc_start: 3201, pa_auc_end: 3700, eval_rounds: [3001, 3100, 3200, 3201, 3300, 3400, 3500, 3600, 3700]}
+mechanism_analysis: {enabled: false}

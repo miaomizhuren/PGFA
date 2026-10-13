@@ -1,0 +1,25 @@
+{
+  "experiment": "svhn_pgfa",
+  "method": "PGFA",
+  "dataset": "SVHN",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/cross_dataset_generalization/svhn_pbu_clean3000_attack3001_3200_observe3201_3700/metrics_svhn_pbu_clean3000_attack3001_3200_observe3201_3700.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 83.87958662714098,
+    "ASR@+500": 69.4046442687747,
+    "ASR@attack_end": 99.90942028985508,
+    "N80": 285,
+    "N90": 201,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {
+    "PA-AUC": 83.88
+  },
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

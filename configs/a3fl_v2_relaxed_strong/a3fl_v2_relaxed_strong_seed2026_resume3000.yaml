@@ -1,0 +1,72 @@
+# One pre-specified enhanced A3FL-v2 comparison. This is a custom variant, not official A3FL.
+experiment:
+  name: a3fl_v2_relaxed_strong_seed2026_resume3000
+  seed: 2026
+  output_dir: outputs/a3fl_v2_relaxed_strong_seed2026
+  log_path: experiments/logs/a3fl_v2_relaxed_strong/a3fl_v2_relaxed_strong_seed2026_resume3000.log
+
+dataset: {name: cifar10, root: ./datasets, num_classes: 10, download: false}
+partition: {type: iid, num_clients: 100}
+model: {name: resnet18}
+federated: {num_rounds: 3700, total_rounds: 3700, clients_per_round: 10, local_epochs: 3, malicious_local_epochs: 3}
+training: {batch_size: 64, learning_rate: 0.010, momentum: 0.9, weight_decay: 0.0005, num_workers: 0}
+device: {type: auto}
+tracking: {enabled: true, database_name: metrics_a3fl_v2_relaxed_strong_seed2026_resume3000.db, record_client_metrics: true}
+
+resume:
+  enabled: true
+  checkpoint_path: outputs/clean_resume_force_clean500_to3000_bs64_e3_save500/checkpoints/global_round_3000.pt
+  resume_round: 3000
+
+checkpoint:
+  enabled: true
+  save_rounds: [3200, 3300, 3400, 3500, 3600, 3700]
+  delta_save_rounds: [3001, 3100, 3200]
+  save_global_model: true
+  save_adversarial_delta: true
+  save_prototype_bank: false
+defense: {enabled: false, name: none}
+visualization: {enabled: false}
+
+attack:
+  enabled: true
+  method: a3fl
+  target_label: 0
+  malicious_client_ids: [0, 1, 2]
+  num_malicious_clients: 3
+  selection_policy: force_during_attack
+  min_malicious_per_attack_round: 3
+  poison_ratio: 0.80
+  start_round: 3001
+  end_round: 3200
+  trigger: {type: adversarial}
+  a3fl:
+    enabled: true
+    variant: v2
+    # epsilon and alpha are in the normalized CIFAR-10 tensor space.
+    # clip_to_valid_rgb projects x + delta to the equivalent legal raw RGB [0, 1] range.
+    epsilon: 0.18
+    steps: 200
+    delta_steps: 200
+    alpha: 0.009
+    lambda_adv: 1.0
+    adv_model_steps: 1
+    adv_model_lr: 0.01
+    trigger_scope: uap
+    refresh_policy: every_round
+    refresh_period: 1
+    warm_start_delta: true
+    use_current_global: true
+    use_adversarial_model: true
+    freeze_delta_after_attack: true
+    save_delta_every_refresh: true
+    use_last_attack_delta_for_post_eval: true
+    post_eval_delta_round: 3200
+    freeze_after_build: true
+    build_once_at_attack_start: false
+    share_delta_across_malicious_clients: true
+    source: non_target
+    clip_to_valid_rgb: true
+
+evaluation: {post_attack_start: 3201, pa_auc_start: 3201, pa_auc_end: 3700, eval_rounds: [3001, 3100, 3200, 3201, 3300, 3400, 3500, 3600, 3700]}
+mechanism_analysis: {enabled: false}

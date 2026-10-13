@@ -1,0 +1,25 @@
+{
+  "experiment": "svhn_ce_only",
+  "method": "CE-only UAP",
+  "dataset": "SVHN",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/cross_dataset_generalization/svhn_ce_uap_clean3000_attack3001_3200_observe3201_3700/metrics_svhn_ce_uap_clean3000_attack3001_3200_observe3201_3700.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 62.58678359683795,
+    "ASR@+500": 45.516304347826086,
+    "ASR@attack_end": 99.67885375494072,
+    "N80": 166,
+    "N90": 8,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {
+    "PA-AUC": 62.59
+  },
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

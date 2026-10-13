@@ -1,0 +1,25 @@
+{
+  "experiment": "gtsrb_ce_only",
+  "method": "CE-only UAP",
+  "dataset": "GTSRB",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/cross_dataset_generalization/gtsrb_ce_uap_clean3000_attack3001_3200_observe3201_3700/metrics_gtsrb_ce_uap_clean3000_attack3001_3200_observe3201_3700.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 45.16122513922037,
+    "ASR@+500": 42.50596658711217,
+    "ASR@attack_end": 99.55449482895784,
+    "N80": 0,
+    "N90": 0,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {
+    "PA-AUC": 45.16
+  },
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

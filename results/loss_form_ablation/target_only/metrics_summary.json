@@ -1,0 +1,27 @@
+{
+  "experiment": "target_only",
+  "method": "Target-only Prototype",
+  "dataset": "CIFAR-10",
+  "seed": 2026,
+  "post_attack_start": 3201,
+  "post_attack_end": 3700,
+  "source_sqlite": [
+    "outputs/pgfa_feature_loss_ablation_seed2026/target_only_seed2026/metrics_pgfa_target_only_seed2026.db"
+  ],
+  "computed_metrics": {
+    "PA-AUC": 85.39617777777778,
+    "ASR@+500": 67.6,
+    "ASR@attack_end": 100.0,
+    "N80": 333,
+    "N90": 190,
+    "rounds": 700,
+    "post_rounds": 500
+  },
+  "expected_metrics": {
+    "PA-AUC": 85.4,
+    "ASR@+500": 67.6,
+    "N80": 333
+  },
+  "status": "VERIFIED",
+  "missing_rounds": []
+}

@@ -1,0 +1,22 @@
+base_config: ../cross_dataset_generalization/gtsrb_pbu_clean3000_attack3001_3200_observe3201_3700.yaml
+experiment:
+  name: gtsrb_pbu_clean3000_attack3001_3200_observe3201_3700_retry1
+  output_dir: outputs/cross_dataset_generalization_retry/gtsrb_pbu_clean3000_attack3001_3200_observe3201_3700_retry1
+  log_path: experiments/logs/cross_dataset_generalization_retry/gtsrb_pbu_clean3000_attack3001_3200_observe3201_3700_retry1.log
+tracking:
+  database_name: metrics_gtsrb_pbu_clean3000_attack3001_3200_observe3201_3700_retry1.db
+attack:
+  prototype_build_policy: legacy_local
+  trigger:
+    adversarial:
+      prototype_contrastive:
+        center_batches: 30
+        min_samples_per_class: 1
+        prototype_source: single_malicious
+        aggregate_prototypes: false
+        refresh_policy: fixed
+metadata:
+  study: cross_dataset_generalization_retry
+  method_label: PBU
+  retry_reason: compact_prototype_indexing_fix_and_center_batches_alignment
+  prototype_estimation: single_malicious_clean_local_min1_at_most_30_batches

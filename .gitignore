@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+datasets/
+outputs/
+experiments/logs/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.npy
+*.npz
+*.db
+.env
+*.pem
+*.key
